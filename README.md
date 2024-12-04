@@ -14,15 +14,10 @@ Unlike the parameters in the paper in (Round 1), we set $\lambda_A=2.0$, $\lambd
 we release them to facilitate community research.
 
 
-![result1](img/1.png)
+![result1](temp-dir/result/1.png)
 <br/><br/>
-![result2](img/2.png)
+![result2](temp-dir/result/2.png)
 <br/><br/>
-![result3](img/3.png)
-<br/><br/>
-![result4](img/4.png)
-<br/><br/>
-![result5](img/5.png)
 
 ## News
 - [07/06/2023] Online Gradio Demo is available [here](https://huggingface.co/spaces/zideliu/styledrop)
