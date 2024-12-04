@@ -31,7 +31,7 @@ pre-trained 체크포인트 다운로드 [link](https://huggingface.co/nzl-thu/M
 `python extract_empty_feature.py`
 명령어 실행으로 필요한 empty_feature파일 생성
 
-최종 디렉토리 구조조:
+최종 디렉토리 구조:
 ```
 .
 ├── assets
