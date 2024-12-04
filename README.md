@@ -19,22 +19,19 @@ we release them to facilitate community research.
 ![result2](temp-dir/result/2.png)
 <br/><br/>
 
-## News
-- [07/06/2023] Online Gradio Demo is available [here](https://huggingface.co/spaces/zideliu/styledrop)
 
-## Todo List
-- [x] Release the code.
-- [x] Add gradio inference demo (runs in local).
-- [ ] Add iterative training (Round 2).
 
 ## Data & Weights Preparation
-First, download VQGAN from this [link](https://drive.google.com/file/d/13S_unB87n6KKuuMdyMnyExW0G1kplTbP/view) (from [MAGE](https://github.com/LTH14/mage), thanks!), and put the downloaded VQGAN in `assets/vqgan_jax_strongaug.ckpt`.
+VQGAN 다운로드 [link](https://drive.google.com/file/d/13S_unB87n6KKuuMdyMnyExW0G1kplTbP/view) (from [MAGE](https://github.com/LTH14/mage), thanks!)
+다운로드 이후 assets 폴더에 vqgan 체크포인트 파일을 넣고 `assets/vqgan_jax_strongaug.ckpt`.로 파일명 변경
 
-Then, download the pre-trained checkpoints from this [link](https://huggingface.co/nzl-thu/MUSE/tree/main/assets/ckpts) to `assets/ckpts` for evaluation or to continue training for more iterations.
+pre-trained 체크포인트 다운로드 [link](https://huggingface.co/nzl-thu/MUSE/tree/main/assets/ckpts) 
+이후, custom dataset으로 추가 학습 진행
 
-finally, prepare empty_feature by runnig command `python extract_empty_feature.py`
+`python extract_empty_feature.py`
+명령어 실행으로 필요한 empty_feature파일 생성
 
-And the final directory structure is as follows:
+최종 디렉토리 구조조:
 ```
 .
 ├── assets
@@ -63,21 +60,29 @@ And the final directory structure is as follows:
 
 
 ## Dependencies
-Same as [MUSE-PyTorch](https://github.com/baaivision/MUSE-Pytorch).
 ```
 conda install pytorch torchvision torchaudio cudatoolkit=11.3
 pip install accelerate==0.12.0 absl-py ml_collections einops wandb ftfy==6.1.1 transformers==4.23.1 loguru webdataset==0.2.5 gradio
 ```
 
 ## Train
-All style data in the paper are placed in the data directory
+data 디렉토리에 이미지 파일 위치
+이미지 파일은 coco데이터셋 활용
+카테고리 80개 
+이미지 약 65000장 -> 4000장 활용
 
-1. Modify `data/one_style.json` (It should be noted that `one_style.json` and `style data` must be in the same directory), The format is `file_name:[object,style]`
+1. data/one_style.json 파일 수정. 형식은 file_name:[object,style]
+   style = None으로 진행
 
 ```json
-{"image_03_05.jpg":["A bear","in kid crayon drawing style"]}
+{"train_4000/COCO_train2014_000000353651.jpg": [
+        "a toilet bowl on the floor in a tiled bathroom",
+        "A standing bathroom stall with a metal hose.",
+        "A close up look at a small white floor drain in a rest room.",
+        "a rom showing a toilet and a shower",
+        "A grey tiled shower features a ground toilet."]}
 ```
-2. Training script as follows.
+2. Training script
 ```shell
 #!/bin/bash
 unset EVAL_CKPT
@@ -85,11 +90,14 @@ unset ADAPTER
 export OUTPUT_DIR="output_dir/for/this/experiment"
 accelerate launch --num_processes 8 --mixed_precision fp16 train_t2i_custom_v2.py --config=configs/custom.py
 ```
-
+configs/custom.py
+config.data_path = 'data/one_style.json"
+n_steps=10000,batch_size=8
+gradio_demo.py 에서 muse모델의 gen_temp 기존 4.5 -> 3.0으로 변경
 
 ## Inference
 
-The pretrained style_adapter weights can be downloaded from [🤗 Hugging Face](https://huggingface.co/zideliu/StyleDrop/tree/main).
+pretrained style_adapter 가중치 다운로드 [🤗 Hugging Face](https://huggingface.co/zideliu/StyleDrop/tree/main).
 ```shell
 #!/bin/bash
 export EVAL_CKPT="assets/ckpts/cc3m-285000.ckpt" 
