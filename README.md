@@ -13,6 +13,8 @@ Unlike the parameters in the paper in (Round 1), we set $\lambda_A=2.0$, $\lambd
 
 we release them to facilitate community research.
 
+## 개요
+이번 프로젝트 목표는 text 입력을 받고 그에 맞는 이미지를 생성하는 것을 수행하는 것 입니다.
 
 ![result1](temp-dir/result/1.png)
 <br/><br/>
