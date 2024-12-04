@@ -22,7 +22,7 @@ we release them to facilitate community research.
 
 
 ## Data & Weights Preparation
-VQGAN 다운로드 [link](https://drive.google.com/file/d/13S_unB87n6KKuuMdyMnyExW0G1kplTbP/view) (from [MAGE](https://github.com/LTH14/mage), thanks!)
+VQGAN 다운로드 [link](https://drive.google.com/file/d/13S_unB87n6KKuuMdyMnyExW0G1kplTbP/view) (from [MAGE](https://github.com/LTH14/mage))
 다운로드 이후 assets 폴더에 vqgan 체크포인트 파일을 넣고 `assets/vqgan_jax_strongaug.ckpt`.로 파일명 변경
 
 pre-trained 체크포인트 다운로드 [link](https://huggingface.co/nzl-thu/MUSE/tree/main/assets/ckpts) 
