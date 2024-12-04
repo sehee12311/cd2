@@ -130,7 +130,3 @@ The demo is also hosted on [HuggingFace](https://huggingface.co/spaces/zideliu/s
 
 * The implementation is based on [MUSE-PyTorch](https://github.com/baaivision/MUSE-Pytorch)
 * Many thanks for the generous help from [Zanlin Ni](https://github.com/nzl-thu)
-
-## Star History
-
-<img src="https://api.star-history.com/svg?repos=zideliu/StyleDrop-PyTorch&type=Date">
