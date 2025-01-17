@@ -20,8 +20,10 @@ we release them to facilitate community research.
 <br/><br/>
 ![result2](temp-dir/result/2.png)
 <br/><br/>
-
-
+![result3]("C:\Users\denny\Pictures\Screenshots\스크린샷 2025-01-17 192820.png")
+<br/><br/>
+![result4]("C:\Users\denny\Pictures\Screenshots\스크린샷 2025-01-17 192800.png")
+<br/><br/>
 
 ## Data & Weights Preparation
 VQGAN 다운로드 [link](https://drive.google.com/file/d/13S_unB87n6KKuuMdyMnyExW0G1kplTbP/view) (from [MAGE](https://github.com/LTH14/mage))
