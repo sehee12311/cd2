@@ -20,9 +20,9 @@ we release them to facilitate community research.
 <br/><br/>
 ![result2](temp-dir/result/2.png)
 <br/><br/>
-![result3]("C:\Users\denny\Pictures\Screenshots\스크린샷 2025-01-17 192820.png")
+![result3]("C:\Users\denny\Pictures\Screenshots\스크린샷\2025-01-17 192820.png")
 <br/><br/>
-![result4]("C:\Users\denny\Pictures\Screenshots\스크린샷 2025-01-17 192800.png")
+![result4]("C:\Users\denny\Pictures\Screenshots\스크린샷\2025-01-17 192800.png")
 <br/><br/>
 
 ## Data & Weights Preparation
