@@ -20,9 +20,10 @@ we release them to facilitate community research.
 <br/><br/>
 ![result2](temp-dir/result/2.png)
 <br/><br/>
-![result3]("C:\Users\denny\Pictures\Screenshots\스크린샷\2025-01-17 192820.png")
+![result3]![스크린샷 2025-01-17 192820](https://github.com/user-attachments/assets/35a73326-8de8-444a-bf56-2a6f757cde13)
 <br/><br/>
-![result4]("C:\Users\denny\Pictures\Screenshots\스크린샷\2025-01-17 192800.png")
+![result4]![스크린샷 2025-01-17 192800](https://github.com/user-attachments/assets/82d29c82-7167-4b17-9886-5e8e49261aae)
+
 <br/><br/>
 
 ## Data & Weights Preparation
